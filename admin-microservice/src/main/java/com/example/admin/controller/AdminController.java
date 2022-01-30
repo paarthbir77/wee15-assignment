@@ -2,6 +2,7 @@ package com.example.admin.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +33,7 @@ public class AdminController {
 	}
 	@GetMapping("/getInventory")
 	public String getInventory(){
+		System.out.println("----------------------getInventory---------------");
 		return adminService.getInventory();
 	}
 	@GetMapping("/saveFinancialReport")

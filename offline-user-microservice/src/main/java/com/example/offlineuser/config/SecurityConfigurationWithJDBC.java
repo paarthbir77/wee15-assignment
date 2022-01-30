@@ -40,7 +40,7 @@ public class SecurityConfigurationWithJDBC extends WebSecurityConfigurerAdapter 
 		.antMatchers("/checkInventory", "/viewInventory", "/placeOrder", "/makeReservation", "/giveFeedback").hasAnyAuthority("Offline Customer")
 		.antMatchers("/","/Register").permitAll()
 		.and()
-		.formLogin();
+		.formLogin().defaultSuccessUrl("http://localhost:4200/offlineuser");
 	}
 
 //	If you don't want to encode the created password, you can write the below bean method, FYI: not recommended for Prod env

@@ -39,7 +39,7 @@ public class SecurityConfigurationWithJDBC extends WebSecurityConfigurerAdapter 
 		http.csrf().disable()
 		.authorizeRequests().antMatchers("/viewMonthlyFinancials", "/viewBillsToday","/welcomeAdmin","/createUser","/viewUsers","/updateUsers","/deleteUsers").hasAuthority("Admin")
 		.and()
-		.formLogin();
+		.formLogin().defaultSuccessUrl("http://localhost:4200/admin");
 	}
 
 //	If you don't want to encode the created password, you can write the below bean method, FYI: not recommended for Prod env
